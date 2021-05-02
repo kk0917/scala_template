@@ -14,7 +14,10 @@ lazy val root = (project in file(".")).settings(
     "org.scoverage"       %% "scalac-scoverage-plugin"  % "1.4.0"  % "provided",
     "org.mockito"          % "mockito-core"             % "2.21.0" % Test,
     "com.beautiful-scala" %% "scalastyle"               % "1.5.0"
-  )
+  ),
+  assembly / test := {},
+  assembly / mainClass := Some("com.example.ClassName"),
+  assembly / assemblyJarName := "buildName.jar"
 )
 
 // TODO: Routing
